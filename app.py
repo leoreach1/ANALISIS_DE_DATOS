@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
-
+with open("assets/css/templatemo-chain-app-dev.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 # Cargar modelo entrenado
 with open('modelo_rf.pkl', 'rb') as f:
     model = pickle.load(f)
