@@ -3,7 +3,7 @@ import pickle
 import streamlit.components.v1 as components
 
 # Incrustar HTML completo desde archivo
-with open("template.html", "r", encoding="utf-8") as f:
+with open("index.html", "r", encoding="utf-8") as f:
     html_string = f.read()
 
 components.html(html_string, height=600, scrolling=True)
