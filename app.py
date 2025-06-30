@@ -1,8 +1,9 @@
 import streamlit as st
-import joblib
+import pickle
 
-# Cargar modelo
-model = joblib.load('modelo_rf.pkl')
+# Cargar modelo entrenado
+with open('modelo_rf.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 st.title("Predicción de Riesgo COVID-19 por Condado")
 
