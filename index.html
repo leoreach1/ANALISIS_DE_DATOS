@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Covid-19 EE.UU.</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!--
+
+TemplateMo 570 Chain App Dev
+
+https://templatemo.com/tm-570-chain-app-dev
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+ 
+  <!-- ***** Header Area End ***** -->
+  <style>
+  #apiChart {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Opcional: limitar el alto en pantallas grandes */
+  @media (min-width: 768px) {
+    #apiChart {
+      max-height: 800px;
+    }
+  }
+
+  /* Opcional: añadir margen para separar de los bordes */
+  .chart-container {
+    padding: 20px;
+  }
+</style>
+
+ 
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>Estadisticas del Covid-19 en 2022 en EE.UU.</h2>
+                    <p>Analizar la distribución geográfica de los casos y muertes por COVID-19 en los Estados Unidos al 24 de marzo de 2023, con el fin de identificar posibles concentraciones espaciales que indiquen focos de transmisión o áreas vulnerables, y comprender los patrones epidemiológicos asociados a dicha distribución. </p>
+                  </div>
+                  <div class="col-lg-12">
+                   <div class="white-button first-button scroll-to-section">
+                    <button onclick="location.href='#contact'">Saber más del proyecto <i class="fas fa-angle-double-right"></i></button>
+                  </div>
+                  <div class="white-button scroll-to-section mt-3">
+                    <button onclick="location.href='#contact'">Calcular posibles concentraciones <i class="fas fa-balance-scale"></i></button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="assets/images/slider-dec.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services" class="services section">
+    <div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="service-item first-service">
+        <div class="icon"></div>
+        <h4>Visualización de Datos</h4>
+        <p>Transformamos datos complejos en gráficos claros e interactivos para facilitar la toma de decisiones estratégicas.</p>
+        <div class="text-button">
+          <a href="#">Leer más <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="service-item second-service">
+        <div class="icon"></div>
+        <h4>Modelos Predictivos</h4>
+        <p>Aplicamos técnicas de machine learning para anticipar comportamientos, identificar riesgos y descubrir oportunidades.</p>
+        <div class="text-button">
+          <a href="#">Leer más <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="service-item third-service">
+        <div class="icon"></div>
+        <h4>Limpieza y Preparación de Datos</h4>
+        <p>Optimizamos la calidad de los datos mediante procesos de depuración, transformación y normalización efectiva.</p>
+        <div class="text-button">
+          <a href="#">Leer más <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+      <div class="col-lg-3">
+        <div class="service-item fourth-service">
+          <div class="icon"></div>
+          <h4>Resultados Óptimos</h4>
+          <p>Con nuestras soluciones basadas en datos, ayudamos a maximizar el rendimiento y lograr decisiones más acertadas y eficientes.</p>
+          <div class="text-button">
+            <a href="#">Leer más <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+ <div id="pricing" class="the-map-section">
+   <div class="container mt-5">
+  <div class="row mt-5">
+  <div class="col-lg-12">
+
+  <div class="section-heading">
+  <h4>Mapa de <em>Casos de COVID-19</em> en Estados Unidos</h4>
+  <img src="assets/images/heading-line-dec.png" alt="Línea decorativa">
+  <p>Visualización interactiva de los estados con mayores casos confirmados de COVID-19, utilizando datos en tiempo real desde una API pública.</p>
+</div>
+
+        </div>
+
+  <div class="col-lg-12">
+
+  <div id="covid-map" style="height: 600px; border-radius: 20px; overflow: hidden;"></div>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Script para cargar datos y mostrar el mapa -->
+<script>
+  const map = L.map('covid-map').setView([37.8, -96], 4); // Centrado en EE.UU.
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Datos de OpenStreetMap y disease.sh',
+  }).addTo(map);
+
+  // Cargar datos COVID por estado desde API pública
+  fetch('https://disease.sh/v3/covid-19/states')
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(state => {
+        // Coordenadas aproximadas de algunos estados (puedes ampliar este objeto)
+        const stateCoords = {
+          "California": [36.7783, -119.4179],
+          "Texas": [31.9686, -99.9018],
+          "Florida": [27.9944, -81.7603],
+          "New York": [40.7128, -74.0060],
+          "Illinois": [40.6331, -89.3985],
+          "Georgia": [32.1656, -82.9001],
+          "Ohio": [40.4173, -82.9071],
+          "Pennsylvania": [41.2033, -77.1945],
+          "North Carolina": [35.7596, -79.0193]
+          // Agrega más si deseas mayor precisión
+        };
+
+        const coords = stateCoords[state.state];
+        if (coords) {
+          const cases = state.cases.toLocaleString();
+          const deaths = state.deaths.toLocaleString();
+          const recovered = state.recovered ? state.recovered.toLocaleString() : 'N/A';
+
+          L.circle(coords, {
+            color: '#006fb0',
+            fillColor: '#006fb0',
+            fillOpacity: 0.4,
+            radius: Math.sqrt(state.cases) * 100
+
+          }).addTo(map).bindPopup(`
+            <strong>${state.state}</strong><br>
+            Casos: ${cases}<br>
+            Muertes: ${deaths}<br>
+            Recuperados: ${recovered}
+          `);
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Error al obtener los datos de COVID:', error);
+    });
+</script>
+</div>
+</div>
+</div>
+</div>
+
+
+
+ <div id="clients" class="the-clients">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="section-heading">
+          <h4>Visualización de <em>Indicadores</em> en Tiempo Real</h4>
+          <img src="assets/images/heading-line-dec.png" alt="">
+          <p>Estas gráficas muestran información obtenida en tiempo real desde una API de datos analíticos.</p>
+        </div>
+      </div>
+     <div class="col-lg-12 chart-container">
+        <canvas id="apiChart"></canvas>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Agrega esto al final de tu archivo HTML o dentro de un script externo -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Simulación de llamada a una API
+  async function fetchDataAndRenderChart() {
+    // Simula una respuesta de API
+    const dataFromAPI = await fetch('https://api.example.com/analytics')
+      .then(res => res.json())
+      .catch(() => ({
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+        values: [12, 19, 3, 5]
+      }));
+
+    const ctx = document.getElementById('apiChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: dataFromAPI.labels,
+        datasets: [{
+          label: 'Casos de COVID-19',
+          data: dataFromAPI.values,
+          backgroundColor: '#006fb0'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          }
+        }
+      }
+    });
+  }
+
+  fetchDataAndRenderChart();
+</script>
+
+
+
+  <footer id="newsletter">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="service-item first-service">
+              <div class="icon"></div>
+              <h4>Integrante 1</h4>
+              <p><strong>Nombre:</strong> Leonardo Jejen</p>
+              <p><strong>Código:</strong> 20232678008</p>
+              <p><strong>Correo:</strong> lfjejend@udistrital.edu.co</p>
+              <div class="text-button">
+                <a href="mailto:lfjejend@udistrital.edu.co">Contactar <i class="fa fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="service-item second-service">
+              <div class="icon"></div>
+              <h4>Integrante 2</h4>
+              <p><strong>Nombre:</strong> Rogger Peña</p>
+              <p><strong>Código:</strong> 20232678031</p>
+              <p><strong>Correo:</strong> rspenar@udistrital.edu.co</p>
+              <div class="text-button">
+                <a href="mailto:rspenar@udistrital.edu.co">Contactar <i class="fa fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Copyright © 2025 Universidad Distrital Francisco Jose de Caldas  All Rights Reserved. 
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+</html>
