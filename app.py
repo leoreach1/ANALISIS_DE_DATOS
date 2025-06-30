@@ -1,7 +1,15 @@
 import streamlit as st
 import pickle
+import streamlit.components.v1 as components
+
+# Incrustar HTML completo desde archivo
+with open("index.html", "r", encoding="utf-8") as f:
+    html_string = f.read()
+
+components.html(html_string, height=600, scrolling=True)
 with open("assets/css/templatemo-chain-app-dev.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 # Cargar modelo entrenado
 with open('modelo_rf.pkl', 'rb') as f:
     model = pickle.load(f)
