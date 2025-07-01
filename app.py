@@ -6,6 +6,7 @@ import streamlit.compobnents.v1 as components
 with open("index.html", "r", encoding="utf-8") as f:
     html_string = f.read()
 
+<<<<<<< HEAD
 # Leer archivo CSS
 with open("assets/css/templatemo-chain-app-dev.css", "r", encoding="utf-8") as f:
     css_string = f.read()
@@ -44,3 +45,6 @@ if st.button("Predecir"):
     prediction = model.predict([[cases, deaths]])[0]
     st.write("Tasa de Letalidad estimada:", round(fatality_rate, 4))
     st.success("Riesgo: Alto" if prediction == 1 else "Riesgo: Bajo")
+=======
+
+>>>>>>> a20d309ee0edcd63602099183a503edca7c125b0
