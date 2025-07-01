@@ -6,8 +6,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import classification_report, confusion_matrix
 
-st.set_page_config(page_title="Análisis Epidemiológico COVID-19", layout="wide")
-st.title("🧠 Análisis y Predicción Multiclase del Riesgo por COVID-19 en EE.UU.")
+st.set_page_config(page_title="Predicción Multiclase COVID-19", layout="wide")
+st.title("🧠 Predicción Multiclase del Riesgo por COVID-19 en EE.UU.")
 
 # -----------------------------------------------------
 st.header("🔍 Predicción de Riesgo")
@@ -20,7 +20,7 @@ try:
     cases = st.number_input("Número de casos", min_value=1)
     deaths = st.number_input("Número de muertes", min_value=0)
     fatality_rate = deaths / cases
-    state_encoded = st.number_input("Código numérico del estado (state_encoded)", min_value=0)
+    state_encoded = st.number_input("Código del estado (state_encoded)", min_value=0)
 
     if st.button("Predecir Riesgo"):
         pred = model.predict([[cases, deaths, fatality_rate, state_encoded]])[0]
