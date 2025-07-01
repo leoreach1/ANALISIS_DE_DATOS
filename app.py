@@ -1,6 +1,6 @@
 import streamlit as st
 import pickle
-import streamlit.compobnents.v1 as components
+import streamlit.components.v1 as components  # Corregido
 
 # Leer archivo HTML
 with open("index.html", "r", encoding="utf-8") as f:
@@ -11,14 +11,12 @@ with open("assets/css/templatemo-chain-app-dev.css", "r", encoding="utf-8") as f
     css_string = f.read()
 
 # Inyectar CSS dentro del HTML
-# Busca el <head> y lo reemplaza para insertar el <style> justo después
 if "<head>" in html_string:
     html_string = html_string.replace(
         "<head>",
         f"<head>\n<style>\n{css_string}\n</style>\n"
     )
 else:
-    # Si no hay <head>, lo inserta al principio del body como emergencia
     html_string = html_string.replace(
         "<body>",
         f"<body>\n<style>\n{css_string}\n</style>\n"
@@ -44,6 +42,3 @@ if st.button("Predecir"):
     prediction = model.predict([[cases, deaths]])[0]
     st.write("Tasa de Letalidad estimada:", round(fatality_rate, 4))
     st.success("Riesgo: Alto" if prediction == 1 else "Riesgo: Bajo")
-
-
-
