@@ -41,7 +41,12 @@ if st.button("📚 Entrenar modelo multiclase ahora"):
         url = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
         df = pd.read_csv(url)
         df['date'] = pd.to_datetime(df['date'])
-        df = df[df['date'] == '2023-03-24'].copy()
+
+        # ✅ Usar un rango de fechas más amplio
+        ultima_fecha = df['date'].max()
+        df = df[df['date'] == ultima_fecha].copy()
+        st.info(f"📆 Usando datos del: {ultima_fecha.date()}")
+
         df = df.dropna(subset=['cases', 'deaths', 'state', 'county'])
         df = df[df['cases'] > 0]
         df['fatality_rate'] = df['deaths'] / df['cases']
@@ -60,6 +65,19 @@ if st.button("📚 Entrenar modelo multiclase ahora"):
 
         X = df[['cases', 'deaths', 'fatality_rate', 'state_encoded']]
         y = df['risk_level']
+
+        # ✅ Validación para evitar errores
+        st.markdown("### 🔍 Validación del conjunto de datos")
+
+        if len(X) == 0:
+            st.error("❌ No hay datos disponibles para entrenar el modelo. El DataFrame está vacío.")
+            st.stop()
+
+        if len(y.unique()) < 2:
+            st.error("❌ El conjunto de datos tiene solo una clase. No se puede entrenar un modelo multiclase.")
+            st.stop()
+
+        st.success(f"✅ Total de registros: {len(X)}. Clases detectadas: {y.unique().tolist()}")
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, test_size=0.2, random_state=42)
         model = RandomForestClassifier(random_state=42, n_estimators=150, max_depth=10)
