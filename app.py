@@ -204,6 +204,14 @@ if df_covid is not None:
         "fatality_rate": "mean",
         "risk_level": "mean"
     }).reset_index()
+    # Formato porcentaje para tasa de letalidad
+    df_map["fatality_rate_str"] = (df_map["fatality_rate"] * 100).round(2).astype(str) + "%"
+
+    # Texto para nivel de riesgo
+    risk_labels = {0: "Bajo", 1: "Medio", 2: "Extremo"}
+    df_map["risk_label_str"] = df_map["risk_level"].round().astype(int).map(risk_labels)
+    df_map["risk_display"] = df_map["risk_level"].round(1).astype(str) + " (" + df_map["risk_label_str"] + ")"
+
     
     # Agregar coordenadas
     df_map["latitude"] = df_map["state"].apply(lambda x: state_coords.get(x, [None, None])[0])
@@ -241,16 +249,20 @@ if df_covid is not None:
     )
     
     tooltip = {
-        "html": "<b>Estado:</b> {state}<br/>"
-                "<b>Casos:</b> {cases:,}<br/>"
-                "<b>Muertes:</b> {deaths:,}<br/>"
-                "<b>Tasa de Letalidad:</b> {fatality_rate:.2%}<br/>"
-                "<b>Nivel de Riesgo:</b> {risk_level:.1f}",
-        "style": {
-            "backgroundColor": "steelblue",
-            "color": "white"
+    "html": """
+        <b>Estado:</b> {state}<br/>
+        <b>Casos:</b> {cases}<br/>
+        <b>Muertes:</b> {deaths}<br/>
+        <b>Tasa de Letalidad:</b> {fatality_rate_str}<br/>
+        <b>Nivel de Riesgo:</b> {risk_display}
+    """,
+    "style": {
+        "backgroundColor": "steelblue",
+        "color": "white"
         }
     }
+
+
     
     deck = pdk.Deck(
         layers=[layer],
