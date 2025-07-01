@@ -333,7 +333,8 @@ try:
             title="Probabilidad de cada Nivel de Riesgo"
         )
         fig_prob.update_layout(showlegend=False)
-        fig_prob.update_yaxis(tickformat='.1%')
+        fig_prob.update_yaxes(tickformat='.1%')
+
         st.plotly_chart(fig_prob, use_container_width=True)
 
 except FileNotFoundError:
@@ -409,17 +410,24 @@ if st.button("🚀 Entrenar Modelo Ahora", type="primary"):
                 st.text(classification_report(y_test, y_pred))
             
             with col2:
-                st.markdown("### 🧩 Matriz de Confusión")
-                cm = confusion_matrix(y_test, y_pred)
-                fig_cm = px.imshow(
+               labels_dict = {0: 'Bajo', 1: 'Medio', 2: 'Extremo'}
+
+               unique_labels = sorted(np.unique(y_test))
+               label_names = [labels_dict[i] for i in unique_labels]
+
+                # Crear la matriz de confusión con etiquetas presentes
+               cm = confusion_matrix(y_test, y_pred, labels=unique_labels)
+
+                # Crear el gráfico con solo las etiquetas existentes
+               fig_cm = px.imshow(
                     cm,
                     labels=dict(x="Predicción", y="Real", color="Cantidad"),
-                    x=['Bajo', 'Medio', 'Extremo'],
-                    y=['Bajo', 'Medio', 'Extremo'],
+                    x=label_names,
+                    y=label_names,
                     title="Matriz de Confusión"
                 )
-                fig_cm.update_xaxes(side="bottom")
-                st.plotly_chart(fig_cm, use_container_width=True)
+               fig_cm.update_xaxes(side="bottom")
+               st.plotly_chart(fig_cm, use_container_width=True)
             
             # Importancia de características
             feature_importance = pd.DataFrame({
